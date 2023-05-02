@@ -4,7 +4,7 @@ attrs==22.2.0
 brotli==1.0.9
 ConfigParser==5.3.0
 cryptography==40.0.2
-Cython==0.29.34
+#Cython==0.29.34
 dl==0.1.0
 docutils==0.19
 HTMLParser==0.0.2
