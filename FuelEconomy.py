@@ -28,7 +28,6 @@ sb_make = st.sidebar.multiselect("Make:", options=df_make['Make'].unique(), max_
 
 #Multiselect - Model selector
 df_model = df_make[df_make['Make'].isin(sb_make) ].sort_values('Model') 
-# & (df_make['Fuel Type 1'].str.contains("Electricity") == False & df_make['Fuel Type 1'].str.contains("Natural Gas")) == False 
 sb_model = st.sidebar.multiselect("Model:", options=df_model['Model'].unique(), max_selections=5)
 
 #Dataframe - Final selection
