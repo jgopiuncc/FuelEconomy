@@ -18,6 +18,9 @@ MaxYear = df['ModelYear'].max()
 YearSlider = st.sidebar.select_slider("Model Year:", options=YearRnge, value=(MinYear, MaxYear))
 LwrRnge, UpprRnge = list(YearSlider)[0], list(YearSlider)[1]
 
+#Sidebar - MPG by Model
+st.sidebar.title("MPG by Model")
+
 #Multiselect - Make selector
 df_make = df[(df['ModelYear']>=LwrRnge) & (df['ModelYear']<=UpprRnge)].sort_values('Make')
 sb_make = st.sidebar.multiselect("Make:", options=df_make['Make'].unique(), max_selections=3)
@@ -30,6 +33,8 @@ sb_model = st.sidebar.multiselect("Model:", options=df_model['Model'].unique(), 
 #Dataframe - Final selection
 df_final = df_model[df_model['Model'].isin(sb_model) ].sort_values('Model') 
 
+#Sidebar - MPG by Model
+st.sidebar.title("MPG by Vehicle Type")
 
 tab1,tab2,tab3,tab4 = st.tabs(['What is Fuel Economy?', 'Fuel Economy MPG by Model', 'Fuel Economy MPG by Vehicle Class', 'Electric Vehicle'])
 
@@ -64,6 +69,13 @@ with tab2:
     # fold=['mean(CityMPG)','mean(HighwayMPG)', 'mean(CombinedMPG)'])
 
     CityMPG | HighwayMPG | CombinedMPG
+
+
+    # plost.bar_chart(data=df_final,
+    #                 bar='Quarter', height=400, width=100,
+    #                 value=['Total Revenue (Mill.)', 'Net Income (Mill.)'],
+    #                 group=True)
+    
     # base = alt.Chart(df).properties(height=500)
     # CityMPG = alt.Chart(df_final).mark_bar().encode(
     #         x=alt.X('Model:N'),
