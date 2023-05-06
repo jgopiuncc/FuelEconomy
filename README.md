@@ -16,4 +16,3 @@ I renamed the column for few of the columns which I used to avoid spaces in the 
 
 ## Tools
 For this project, I used Streamlit, pandas for data frame, Altair for visualization. I have done this project in Tableau [What is Fuel Economy](https://public.tableau.com/app/profile/jibeesh.gopi/viz/FuelEconomy-VehicleMPG/WhatisFuelEconomy). It was little challenging to duplicate what I did in Tableau, but in the end I kept it simple as I am still learning streamlit and altair. It was fun learning to implement what I did in the Tableau version.
-
